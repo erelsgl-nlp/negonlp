@@ -9,6 +9,7 @@ var xml2js = require('xml2js')
 	, path = require('path')
 	, util = require('util')
 	, BiuteeClient = require('./te_client_biutee')
+	, logger = require('./logger')
 	;
 
 
@@ -22,13 +23,6 @@ exports.RTE = function (pathToXmlFile, next) {
 				this.pairs = result['entailment-corpus']['pair'];
 				next();
 		});
-}
-
-var writeJsonLog = function(logFileName, object) {
-    object.timestamp = new Date().toISOString();
-    fs.appendFile(cleanPathToLog(logFileName+".json"), JSON.stringify(object)+"\n", function (err) {
-        if (err) throw (err);
-    });
 }
 
 
@@ -72,8 +66,8 @@ if (process.argv[1] === __filename) {
 				console.log("\t"+step);
 			}
 			console.log("Decision proof for pair "+iPair+": "+decision);
-			writeJsonLog("proofs", {
-				proof: JSON.parse(proof),
+			logger.writeJsonLog("proofs", {
+				proof: proof,
 				decision: decision,
 				task: task,
 				index: iPair
