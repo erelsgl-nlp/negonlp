@@ -1,0 +1,29 @@
+{
+  "name": "negochat",
+  "version": "0.0.2",
+  "private": true,
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {
+    "connect": "~2.7.10",
+    "express": "~3.2.5",
+    "jade": "~0.30.0",
+    "socket.io": "~0.9.14",
+    "socket.io-client": "~0.9.11",
+    "forms": "~0.2.2",
+    "xtend": "~2.0.4",
+    "sprintf": "~0.1.1",
+    "session.socket.io": "~0.1.6",
+    "xml2js": "~0.2.7",
+    "json-ref": "~1.0.0",
+    "node-uuid": "~1.4.0",
+    "async": "~0.2.9",
+    "nconf": "~0.6.7",
+    "azure": "~0.7.5",
+    "semaphore": "~1.0.1",
+    "browserType": "~0.2.0",
+    "useragent": "~2.0.4",
+    "node-fs": "~0.1.6"
+  }
+}
